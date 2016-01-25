@@ -5,18 +5,6 @@
     return rad * (180/Math.PI);
   }
 
-  function rotate(center, vector, degree) {
-    var rad = degToRad(degree);
-    var cosTheta = Math.cos(rad);
-    var sinTheta = Math.sin(rad);
-    return [
-      (cosTheta * (vector[0] - center[0]) -
-      sinTheta * (vector[1] - center[1]) + center[0]),
-      (sinTheta * (vector[0] - center[0]) +
-      cosTheta * (vector[1] - center[1]) + center[1])
-    ];
-  }
-
   function getCenter(element) {
     var rect = element.getBoundingClientRect();
     return [
@@ -36,7 +24,7 @@
   }
 
   function accessible(container) {
-    if(container.tabIndex == -1) container.tabIndex = 0;
+    if(container.tabIndex === -1) container.tabIndex = 0;
   }
 
   function fireEvent(element, name) {
@@ -152,7 +140,10 @@
         var val = value + (dir * step);
         if(val === max + 1) val = min;
         if(val === min - 1) val = max - 1; 
-        if(dir) Angle(val);
+        if(dir) {
+          e.preventDefault();
+          Angle(val);
+        }
       }
 
       $all.addEventListener('keydown', keyboardInput, false);

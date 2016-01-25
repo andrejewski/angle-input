@@ -4,10 +4,20 @@
   <link rel='stylesheet' href='angle-input.css'/>
 </head>
 <body>
-  <div class='plain-angle-input default-input'></div>
-  <div class='plain-angle-outlet'></div>
+  <div class='roots'>
+    <div id='vanilla-root'>
+      <h3>Vanilla</h3>
+      <div class='plain-angle-input default-input'></div>
+      <p class='plain-angle-outlet'>0deg</p>
+    </div>
 
+    <div id='react-root'></div>
+  </div>
+
+  <script src='node_modules/react/dist/react.js'></script>
+  <script src='node_modules/react-dom/dist/react-dom.js'></script>
   <script src='angle-input.js'></script>
+  <script src='angle-input.react.js'></script>
   <script src='angle-input-demo.js'></script>
 </body>
 </html>
