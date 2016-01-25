@@ -1,0 +1,26 @@
+{
+  "name": "angle-input",
+  "version": "1.0.0",
+  "description": "Angle (degree/radian) form input for jQuery, React, and vanilla JavaScript",
+  "main": "angle-input.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrejewski/angle-input.git"
+  },
+  "keywords": [
+    "angle",
+    "input",
+    "react-component",
+    "jquery",
+    "ui"
+  ],
+  "author": "Chris Andrejewski <christopher.andrejewski@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrejewski/angle-input/issues"
+  },
+  "homepage": "https://github.com/andrejewski/angle-input#readme"
+}
