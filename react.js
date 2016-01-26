@@ -31,13 +31,13 @@
   }
 
   var $all = document.body;
-  var max = 360;
-  var min = 0;
 
   var AngleInput = React.createClass({
     displayName: 'AngleInput',
     propTypes: {
-      value: React.PropTypes.number,
+      defaultValue: React.PropTypes.number,
+      max: React.PropTypes.number,
+      min: React.PropTypes.number,
       step: React.PropTypes.number,
       onChange: React.PropTypes.func,
       onInput: React.PropTypes.func,
@@ -45,10 +45,23 @@
       className: React.PropTypes.string,
       pivotClassName: React.PropTypes.string,
     },
+    getDefaultProps: function() {
+      return {
+        defaultValue: 0,
+        max: 360,
+        min: 0,
+        step: 1,
+
+        className: 'angle-input',
+        pivotClassName: 'angle-input-pivot',
+      }
+    },
     getInitialState: function() {
-      return {value: this.props.value || 0};
+      return {value: this.props.defaultValue || 0};
     },
     normalize: function(degree) {
+      var max = this.props.max;
+      var min = this.props.min;
       var step = this.props.step || 1;
       var n = Math.max(min, Math.min(degree, max));
       var s = n - (n % step);
@@ -65,6 +78,8 @@
       this.endKeyboardInput();
     },
     _onKeyDown: function(e) {
+      var max = this.props.max;
+      var min = this.props.min;
       var step = this.props.step || 1;
       var value = this.state.value;
 
@@ -145,10 +160,11 @@
         onBlur: this._onBlur,
         onMouseDown: this._onMouseDown,
         tabIndex: this.props.tabIndex || 0,
-      }, r('div', {
+      }, [r('span', {
+        key: 'pivot',
         className: pivotClassName,
         style: {transform: "rotate(-"+this.state.value+"deg)"},
-      }));
+      })].concat(this.props.children || []));
     }
   });
 

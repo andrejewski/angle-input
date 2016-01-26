@@ -1,10 +1,11 @@
 {
   "name": "angle-input",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Angle (degree/radian) form input for jQuery, React, and vanilla JavaScript",
   "main": "angle-input.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "dist": "rm -rf dist && mkdir dist && cp index.js dist/angle-input.js && cp react.js dist/angle-input.react.js && cp index.js dist/angle-input.jquery.js"
   },
   "repository": {
     "type": "git",

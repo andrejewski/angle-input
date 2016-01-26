@@ -50,7 +50,7 @@
   function anglePivotElem(container) {
     var pivot = container.querySelector('.pivot');
     if(!pivot) {
-      pivot = document.createElement('div');
+      pivot = document.createElement('span');
       pivot.className = 'angle-input-pivot';
       container.appendChild(pivot);
     }
@@ -208,7 +208,7 @@
   if(typeof jQuery !== 'undefined' && jQuery.fn) {
     jQuery.fn.angleInput = function(options) {
       var $elems = $(this);
-      $elems.each(function($elem) {
+      $elems.each(function(index, $elem) {
         if(!$elem.angleDelegate) {
           $elem.angleDelegate = AngleInput($elem, options);
         }
@@ -217,6 +217,12 @@
     }
 
     jQuery.angleInput = function($elems, options) {
+      if(typeof $elems === 'number') {
+        // assume being called by $.fn.each or $.fn.map
+        // angleInput(index, elem)
+        $elems = $(options);
+        options = null;
+      }
       var elem = $elems
         .angleInput(options)
         .get(0);
