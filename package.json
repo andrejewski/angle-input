@@ -1,7 +1,7 @@
 {
   "name": "angle-input",
   "version": "0.0.1",
-  "description": "Angle (degree/radian) form input for jQuery, React, and vanilla JavaScript",
+  "description": "Angle input for jQuery, React, and vanilla JavaScript",
   "main": "angle-input.js",
   "scripts": {
     "test": "mocha",

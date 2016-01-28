@@ -47,7 +47,8 @@ elem.onchange = function(e) {
 // fired for every immediate value change
 // similar to <input type='range'/>
 elem.oninput = function(e) {
-
+  // these events are synthetic
+  // access the real events via the member e.raw
 }
 ```
 
@@ -102,10 +103,9 @@ var MyComponent = React.createClass({
     });
   }
 });
+```
 
 Note: The React component does not support form submission via a nested `<input>` tag. Instead a parent component must get this value from the component.
-
-```
 
 ## Styling
 
