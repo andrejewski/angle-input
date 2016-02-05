@@ -10,7 +10,7 @@ input.oninput = function(e) {
 }
 
 input.onchange = function(e) {
-  outlet.innerHTML = "<b>"+angle()+"deg</b>";
+  outlet.innerText = angle()+"deg";
 }
 
 // React JavaScript
@@ -37,9 +37,7 @@ var Page = React.createClass({
         onInput: this.onInput,
         value: this.state.value,
       }),
-      r('p', {key: 'p'}, this.state.changed
-        ? r('b', {}, this.state.value + 'deg')
-        : this.state.value + 'deg')
+      r('p', {key: 'p'}, this.state.value + 'deg')
     ]);
   }
 });

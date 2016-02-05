@@ -1,0 +1,46 @@
+
+body {
+  height: 100%;
+  margin: 0px;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.demo header {
+  display: block;
+  margin-top: 2em;
+}
+
+.demo h1 {
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+}
+
+.demo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.examples {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+#vanilla-root,
+#react-root {
+  padding: 30px;
+}
+

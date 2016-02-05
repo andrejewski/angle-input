@@ -1,23 +1,4 @@
 
-body {
-  height: 100%;
-  margin: 0px;
-  text-align: center;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.roots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.roots > div {
-  padding: 2em;
-  width: 200px;
-}
-
 .default-input {
   position: relative;
   border-radius: 50%;

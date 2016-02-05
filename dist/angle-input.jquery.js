@@ -27,13 +27,16 @@
     if(container.tabIndex === -1) container.tabIndex = 0;
   }
 
-  function fireEvent(element, name) {
+  function fireEvent(element, name, rawEvent) {
     if ("createEvent" in document) {
       var event = document.createEvent("HTMLEvents");
       event.initEvent(name, false, true);
+      event.raw = rawEvent;
       element.dispatchEvent(event);
     } else {
-      element.fireEvent("on"+name);
+      var event = document.createEventObject();
+      event.raw = rawEvent;
+      element.fireEvent("on"+name, event);
     }
   }
 
@@ -109,7 +112,7 @@
       value = normalize(deg);
       updateView();
 
-      fireEvent($dom, done ? 'change' : 'input');
+      fireEvent($dom, done ? 'change' : 'input', event);
     }
 
     function beginKeyboardInput() {

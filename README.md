@@ -59,7 +59,7 @@ jQuery does not deviate much from the Vanilla, jQuery integration is essentially
 - `jQuery.angleInput($ || DOMNode, [options])`
 - `$($ || DOMNode).angleInput([options])`
 
-The differences are very subtle. The former is used when you want to access the AngleInput [g/s]etter for **one** specific element. The latter is used when you want to chain the creation of AngleInput for **one or more** elements **and continue the chain with the elements** using other jQuery functions.
+The differences are very subtle. The former is used when you want to access the Angle Input [g/s]etter for **one** specific element. The latter is used when you want to chain the creation of Angle Input for **one or more** elements **and continue the chain with the elements** using other jQuery functions.
 
 ```js
 var xetter = $.angleInput($('.single-input-angle'), options)
@@ -72,7 +72,7 @@ $('.angle-input')
   .on('change', updateAngleLabel);
 ```
 
-To access the AngleInput [g/s]etters for multiple elements, use:
+To access the Angle Input [g/s]etters for multiple elements, use:
 
 ```js
 var xetters = $(elements).map($.angleInput).get();
