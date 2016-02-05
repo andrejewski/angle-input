@@ -5,7 +5,8 @@
   "main": "angle-input.js",
   "scripts": {
     "test": "mocha",
-    "dist": "rm -rf dist && mkdir dist && cp index.js dist/angle-input.js && cp react.js dist/angle-input.react.js && cp index.js dist/angle-input.jquery.js"
+    "dist": "rm -rf dist && mkdir dist && cp index.js dist/angle-input.js && cp react.js dist/angle-input.react.js && cp index.js dist/angle-input.jquery.js",
+    "deps": "rm -rf deps && mkdir deps && cp node_modules/react/dist/react.js deps && cp node_modules/react-dom/dist/react-dom.js deps"
   },
   "repository": {
     "type": "git",
