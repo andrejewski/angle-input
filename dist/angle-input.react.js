@@ -131,7 +131,7 @@
       $all.removeEventListener('mouseup', this._onMouseUp, false);
       this.tracking = false;
     },
-    updateWithEvent(event, done) {
+    updateWithEvent: function(event, done) {
       var $dom = this.refs.container;
       var vector = [event.x, event.y];
       var deg = angle(vector, $dom);
